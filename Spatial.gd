@@ -5,7 +5,7 @@ export var speed = 400
 var velocity = Vector2(0, 0)
 const SPEED = 100
 const GRAVITY = 35
-const JUMPFORCE = -1000
+const JUMPFORCE = -800
 var screen_size
 
 
