@@ -15,11 +15,15 @@ func _ready():
 	#hide()
 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
-	if Input.is_action_pressed("ui_left"):
+		$PlayerSprite.play("walk")
+	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
+		$PlayerSprite.play("walk")
+	else:
+		$PlayerSprite.play('idle')
 		
 	velocity.y = velocity.y + GRAVITY
 	
