@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprites/ball-sprite.png" type="Texture" id=1]
 [ext_resource path="res://sprites/volleyball.png" type="Texture" id=2]
 [ext_resource path="res://Ball.gd" type="Script" id=3]
+[ext_resource path="res://audio/goal.wav" type="AudioStream" id=4]
+
+[sub_resource type="PhysicsMaterial" id=3]
+friction = 0.05
+bounce = 0.3
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -22,9 +27,15 @@ radius = 42.435
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2( 0.210224, 0.210224 )
-mass = 0.85
+mass = 50.0
+physics_material_override = SubResource( 3 )
 gravity_scale = 10.0
+linear_velocity = Vector2( 0, -1 )
+linear_damp = 1.0
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -37,3 +48,7 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Goal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 8.412

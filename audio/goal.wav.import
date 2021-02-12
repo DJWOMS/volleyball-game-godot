@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/goal.wav-8b33139c9c24ad32dd1786041dd21e5d.sample"
+
+[deps]
+
+source_file="res://audio/goal.wav"
+dest_files=[ "res://.import/goal.wav-8b33139c9c24ad32dd1786041dd21e5d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -4,15 +4,14 @@ signal hit
 
 var velocity = Vector2(0, 0)
 export var SPEED = 200
+export var JUMPFORCE = -800
 const GRAVITY = 35
-const JUMPFORCE = -800
 var screen_size
 
 
 
 func _ready():
 	screen_size = get_viewport_rect().size
-	#hide()
 
 
 func _process(_delta):
@@ -32,3 +31,4 @@ func _process(_delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x ,0, 0.2)
+	position.x = clamp(position.x, 0, 440)
