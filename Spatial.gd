@@ -17,7 +17,8 @@ func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 		$PlayerSprite.play("walk")
-		#$AudioStreamPlayer.play()
+		#if is_on_floor():
+			#$AudioStreamPlayer.play()
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 		$PlayerSprite.play("walk")
@@ -33,8 +34,3 @@ func _process(_delta):
 	velocity.x = lerp(velocity.x ,0, 0.2)
 	position.x = clamp(position.x, 590, screen_size.x)
 
-
-
-func _on_Ball_body_entered(body):
-	$HitBall.play()
-	print("sdd")

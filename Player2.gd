@@ -31,4 +31,5 @@ func _process(_delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x ,0, 0.2)
-	position.x = clamp(position.x, 0, 440)
+	position.x = clamp(position.x, 0, 435)
+

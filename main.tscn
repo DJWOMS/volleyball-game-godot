@@ -62,6 +62,7 @@ shape = SubResource( 1 )
 position = Vector2( 262.064, 17.6389 )
 scale = Vector2( 1.01239, 0.923051 )
 mass = 0.104082
+contacts_reported = 10
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 824.449, 340.28 )
@@ -145,6 +146,6 @@ stream = ExtResource( 10 )
 volume_db = -9.941
 [connection signal="body_entered" from="fallzone_pl1" to="Ball" method="_on_fallzone_pl1_body_entered"]
 [connection signal="body_entered" from="fallzone_pl2" to="Ball" method="_on_fallzone_pl2_body_entered"]
-[connection signal="body_entered" from="Ball" to="Player" method="_on_Ball_body_entered"]
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_Ball_body_entered"]
 [connection signal="fall_pl_1" from="Ball" to="Score" method="_on_Ball_fall_pl_1"]
 [connection signal="fall_pl_2" from="Ball" to="Score" method="_on_Ball_fall_pl_2"]
