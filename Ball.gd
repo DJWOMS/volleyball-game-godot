@@ -1,10 +1,17 @@
 extends RigidBody2D
 
 func _ready():
-	pass # Replace with function body.
-
-
-func _on_fallzone_body_entered(body):
+	pass
+	
+	
+func _on_fallzone_pl1_body_entered(body):
 	if body is RigidBody2D:
-		print(body)
-		get_tree().change_scene("res://Start.tscn")
+		get_tree().change_scene("res://main.tscn")
+		
+		
+func _on_fallzone_pl2_body_entered(body):
+	if body is RigidBody2D:
+		get_tree().change_scene("res://main.tscn")
+
+
+
