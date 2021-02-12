@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sprites/gr1_1.png" type="Texture" id=1]
 [ext_resource path="res://Spatial.tscn" type="PackedScene" id=2]
@@ -8,8 +8,11 @@
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/sky.jpg" type="Texture" id=7]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1952.44, 62.9 )
+
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 529.927, 80.6933 )
+extents = Vector2( 595.678, 80.6933 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.7138, 82.9218 )
@@ -30,6 +33,15 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 524288, 0, 0, 524315, 0, 0, 851975, 1, 0, 851986, 1, 0 )
 
+[node name="fallzone" type="Area2D" parent="."]
+position = Vector2( 544.499, 504.609 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
+shape = SubResource( 4 )
+
 [node name="Ball" parent="." instance=ExtResource( 6 )]
 position = Vector2( 262.064, 17.6389 )
 scale = Vector2( 1.01239, 0.923051 )
@@ -37,9 +49,11 @@ mass = 0.104082
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 832, 160 )
+SPEED = 300
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 256, 160 )
+SPEED = 300
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 80, 528 )
@@ -89,5 +103,8 @@ position = Vector2( -2.44088, 2.62704 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
 position = Vector2( -2.37841, 72.3408 )
 shape = SubResource( 3 )
+[connection signal="body_entered" from="fallzone" to="Ball" method="_on_fallzone_body_entered"]
+[connection signal="tree_entered" from="fallzone" to="Ball" method="_on_fallzone_tree_entered"]

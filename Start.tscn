@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Start.gd" type="Script" id=1]
+
+[node name="Start" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 428.054
+margin_top = 201.8
+margin_right = 805.054
+margin_bottom = 337.8
+text = "Press spece"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,9 +1,9 @@
 extends KinematicBody2D
 signal hit
 
-export var speed = 400 
+
 var velocity = Vector2(0, 0)
-const SPEED = 200
+export var SPEED = 200
 const GRAVITY = 35
 const JUMPFORCE = -800
 var screen_size

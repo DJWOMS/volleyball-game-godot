@@ -1,9 +1,8 @@
 extends KinematicBody2D
 signal hit
 
-export var speed = 400 
 var velocity = Vector2(0, 0)
-const SPEED = 200
+export var SPEED = 200
 const GRAVITY = 35
 const JUMPFORCE = -800
 var screen_size
@@ -32,19 +31,4 @@ func _process(_delta):
 	
 	velocity = move_and_slide(velocity, Vector2.UP)
 	velocity.x = lerp(velocity.x ,0, 0.2)
-	
-	""" if velocity.length() > 0:
-		velocity = velocity.normalized() * speed
-		$AnimatedSprite.play()
-	else:
-		$AnimatedSprite.stop()
-	position += velocity * delta
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
-	if velocity.x != 0:
-		$AnimatedSprite.animation = "walk"
-		$AnimatedSprite.flip_v = false
-		$AnimatedSprite.flip_h = velocity.x < 0
-	elif velocity.y != 0:
-		$AnimatedSprite.animation = "jump"
-		$AnimatedSprite.flip_v = velocity.y > 0 """
+
