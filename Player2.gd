@@ -1,13 +1,5 @@
-extends KinematicBody2D
-signal hit
-
-
-var velocity = Vector2(0, 0)
-export var SPEED = 200
-export var JUMPFORCE = -800
-const GRAVITY = 35
-var screen_size
-
+extends "res://scripts/PlayerBase.gd"
+signal hit_player_2
 
 
 func _ready():

@@ -6,11 +6,11 @@
 [ext_resource path="res://audio/goal.wav" type="AudioStream" id=4]
 [ext_resource path="res://audio/ball.wav" type="AudioStream" id=5]
 
-[sub_resource type="PhysicsMaterial" id=3]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.05
 bounce = 0.3
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -23,13 +23,13 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 radius = 42.435
 
 [node name="Ball" type="RigidBody2D"]
 position = Vector2( 0.210224, 0.210224 )
 mass = 50.0
-physics_material_override = SubResource( 3 )
+physics_material_override = SubResource( 1 )
 gravity_scale = 10.0
 contact_monitor = true
 linear_velocity = Vector2( 0, -1 )
@@ -41,12 +41,12 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.10511, -0.0363598 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Goal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

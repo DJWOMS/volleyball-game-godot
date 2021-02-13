@@ -16,12 +16,7 @@ func _on_fallzone_pl1_body_entered(body):
 		$Goal.play()
 		emit_signal("fall_pl_1")
 		GlobalScore.player_turn = 2
-		print(mode)
-		#$".".set_mode(0)
-		position.x = 738
-		position.y = 0
-		mode = MODE_STATIC
-		print(mode)
+		queue_free()
 		#get_tree().change_scene("res://main.tscn")
 		
 		
