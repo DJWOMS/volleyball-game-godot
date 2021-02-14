@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scripts/SceneBase.gd"
 
 
 func _ready():
@@ -10,15 +10,9 @@ func _process(_delta):
 		get_tree().quit()
 
 
-func _on_NewBall_fall_pl_1():
-	#for child in $NewBall.get_children():
-	#	child.queue_free()
-	get_node("NewBall").queue_free()
-	#$NewBall.position.x = 738
-	print('MAin')
+func _on_Ball_fall_pl_1():
+	player_position()
 
 
-func _on_NewBall_fall_pl_2():
-	$NewBall.set_mode(1)
-	$NewBall.position.x = 738
-	print('MAin222')
+func _on_Ball_fall_pl_2():
+	player_position()
