@@ -3,6 +3,8 @@ signal hit_player_2
 
 
 func _ready():
+	position.x = 250
+	position.y = 340
 	screen_size = get_viewport_rect().size
 
 

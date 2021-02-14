@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="ball"
-run/main_scene="res://Start.tscn"
+run/main_scene="res://levels/ChoiceLvl.tscn"
 config/icon="res://icon.png"
 
 [autoload]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/background/back_lvl2.jpg" type="Texture" id=1]
+[ext_resource path="res://sprites/trees.tres" type="TileSet" id=2]
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Spatial.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Score.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/Level2.gd" type="Script" id=7]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512.902, 299.491 )
+scale = Vector2( 0.162057, 0.169267 )
+texture = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+format = 1
+tile_data = PoolIntArray( 393223, 3, 0 )
+
+[node name="Ball" parent="." instance=ExtResource( 5 )]
+
+[node name="Player2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 151.71, 140.503 )
+SPEED = 150
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+SPEED = 150
+
+[node name="Score" parent="." instance=ExtResource( 6 )]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[connection signal="fall_pl_1" from="Ball" to="." method="_on_Ball_fall_pl_1"]
+[connection signal="fall_pl_2" from="Ball" to="." method="_on_Ball_fall_pl_2"]
