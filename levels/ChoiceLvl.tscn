@@ -1,12 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://sprites/level_icon/lvl_1.jpg" type="Texture" id=1]
 [ext_resource path="res://levels/ChoiceLvl.gd" type="Script" id=2]
 [ext_resource path="res://sprites/level_icon/lvl_2.jpg" type="Texture" id=3]
+[ext_resource path="res://Font/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 4 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 1.25995
+margin_top = -3.77979
+margin_right = 1.26001
+margin_bottom = -3.77979
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -30,6 +39,29 @@ margin_right = 1438.33
 margin_bottom = 633.877
 rect_scale = Vector2( 0.264059, 0.260366 )
 texture_normal = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 31.3611
+margin_top = 513.238
+margin_right = 511.361
+margin_bottom = 570.238
+custom_fonts/font = SubResource( 1 )
+text = "W - Jump
+Left - A  Right - D "
+align = 1
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 555.0
+margin_top = 511.0
+margin_right = 1011.0
+margin_bottom = 577.0
+custom_fonts/font = SubResource( 1 )
+text = "/\\ - Jump
+<- Left  Right -> "
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

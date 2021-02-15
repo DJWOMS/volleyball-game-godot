@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/foliagePack_default.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 103.75, 210, 0.972229, 210, 0.972229, 0, 103.75, 0 )
+points = PoolVector2Array( 53, 1, 56, 1, 79, 77, 103, 182, 103, 208, 1, 209, 0, 178, 48, 0 )
 
 [resource]
 0/name = "foliagePack_default.png 0"
