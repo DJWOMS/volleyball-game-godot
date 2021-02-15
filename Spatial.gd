@@ -12,11 +12,13 @@ func _process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		velocity.x = SPEED
 		$PlayerSprite.play("walk")
-		#if is_on_floor():
-			#$AudioStreamPlayer.play()
+		if not $Go.playing and is_on_floor():
+			$Go.play()
 	elif Input.is_action_pressed("ui_left"):
 		velocity.x = -SPEED
 		$PlayerSprite.play("walk")
+		if not $Go.playing and is_on_floor():
+			$Go.play()
 	else:
 		$PlayerSprite.play('idle')
 		

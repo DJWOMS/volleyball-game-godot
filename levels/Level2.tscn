@@ -77,7 +77,7 @@ JUMPFORCE = -900
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -10.0
+volume_db = -5.0
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2( 502.062, 606.297 )
@@ -91,6 +91,7 @@ shape = SubResource( 3 )
 [connection signal="body_entered" from="fallzone_pl1" to="Ball" method="_on_fallzone_pl1_body_entered"]
 [connection signal="body_entered" from="fallzone_pl2" to="Ball" method="_on_fallzone_pl2_body_entered"]
 [connection signal="body_entered" from="Ball" to="Ball" method="_on_Ball_body_entered"]
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_Ball_body_entered_lvl2"]
 [connection signal="fall_pl_1" from="Ball" to="Score" method="_on_Ball_fall_pl_1"]
 [connection signal="fall_pl_1" from="Ball" to="." method="_on_Ball_fall_pl_1"]
 [connection signal="fall_pl_2" from="Ball" to="Score" method="_on_Ball_fall_pl_2"]
